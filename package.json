@@ -4,7 +4,8 @@
   "description": "Task organizer Web application using Node.js, Express, Mongoose, and mongoDB",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "express-session": "^1.7.6",
     "ejs": "^1.0.0",
     "mongoose": "~4.3.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  db: "mongodb://localhost/sample-db",
+  db: "mongodb://localhost/taskorganizer-db",
   sessionSecret: "myDevelopmentSecret",
 };
