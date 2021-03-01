@@ -29,6 +29,9 @@ module.exports = function () {
   );
   app.use(bodyParser.json()); //use middleware that only parses json
   app.use(methodOverride()); // use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
+  //override with POST having ?_method=DELETE or ?_method=PUT in HTML code
+  app.use(methodOverride("_method"));
+
   //saveUninitialized - forces a session that is "uninitialized" to be saved to the store
   //resave - forces the session to be saved back to the session store
   // Configure the 'session' middleware

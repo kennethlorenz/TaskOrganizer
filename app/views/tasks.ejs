@@ -85,7 +85,12 @@
 
           <td>
             <div>
-              <input type="submit" value="Update Task" style="width: 200px" />
+              <input
+                type="submit"
+                formaction="/list_tasks/<%= task.taskId %>?_method=PUT"
+                value="Update Task"
+                style="width: 200px"
+              />
             </div>
           </td>
         </tr>
