@@ -1,7 +1,7 @@
 //Load the index controller
-var index = require("../../app/controllers/index.server.controller");
+var index = require("../controllers/index.server.controller");
 // Load the 'tasks' controller
-var tasks = require("../../app/controllers/tasks.server.controller");
+var tasks = require("../controllers/tasks.server.controller");
 
 // Define the routes module' method
 module.exports = function (app) {
@@ -14,4 +14,7 @@ module.exports = function (app) {
 
   // a post request to /tasks will execute createTask method in tasks.server.controller
   app.route("/tasks").post(tasks.createTask);
+
+  //display the list of tasks created
+  app.route("/list_tasks").get(tasks.readTasks);
 };
