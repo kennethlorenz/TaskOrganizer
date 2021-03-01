@@ -26,4 +26,6 @@ module.exports = function (app) {
   //be called only once in a request - response cycle,
   //even if the parameter is matched in multiple routes
   app.param("taskId", tasks.findTaskByTaskId);
+
+  app.route("/list_tasks/:taskId").delete(tasks.deleteTaskById);
 };

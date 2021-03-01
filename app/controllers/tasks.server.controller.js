@@ -12,7 +12,7 @@ exports.createTask = function (req, res, next) {
       return next(err);
     } else {
       // Use the 'response' object to send a JSON response
-      res.json(task);
+      res.redirect("list_tasks");
     }
   });
 };
@@ -100,4 +100,31 @@ exports.findTaskByTaskId = function (req, res, next, taskId) {
       }
     }
   );
+};
+
+exports.delete = function (req, res, next) {
+  req.task.remove((err) => {
+    if (err) {
+      return next(err);
+    } else {
+      res.json(req.task);
+    }
+  });
+};
+
+exports.deleteTaskById = function (req, res, next) {
+  console.log(req.task.taskId);
+  Task.findOneAndRemove(
+    {
+      taskId: req.task.taskId,
+    },
+    function (err, task) {
+      if (err) {
+        throw err;
+      } else {
+        console.log("Task successfully deleted");
+      }
+    }
+  );
+  res.redirect("/list_tasks");
 };

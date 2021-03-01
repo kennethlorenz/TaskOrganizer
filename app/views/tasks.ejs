@@ -93,6 +93,16 @@
               />
             </div>
           </td>
+          <td>
+            <div>
+              <input
+                type="submit"
+                formaction="/list_tasks/<%= task.taskId %>?_method=DELETE"
+                value="Delete Task"
+                style="width: 200px"
+              />
+            </div>
+          </td>
         </tr>
 
         <% })%>
