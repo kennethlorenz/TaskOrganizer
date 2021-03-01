@@ -20,6 +20,7 @@ module.exports = function (app) {
 
   // Set up the 'courses' parameterized routes
   app.route("/list_tasks/:taskId").get(tasks.read).put(tasks.updateByTaskId);
+
   // Set up the 'taskId' parameter middleware
   //All param callbacks will be called before any handler of
   //any route in which the param occurs, and they will each

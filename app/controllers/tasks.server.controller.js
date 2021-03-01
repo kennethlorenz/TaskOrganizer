@@ -102,16 +102,6 @@ exports.findTaskByTaskId = function (req, res, next, taskId) {
   );
 };
 
-exports.delete = function (req, res, next) {
-  req.task.remove((err) => {
-    if (err) {
-      return next(err);
-    } else {
-      res.json(req.task);
-    }
-  });
-};
-
 exports.deleteTaskById = function (req, res, next) {
   console.log(req.task.taskId);
   Task.findOneAndRemove(
